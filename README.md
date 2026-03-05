@@ -6,6 +6,7 @@
 
 - **WezTerm** - ターミナルエミュレータの設定（UI、キーバインド）
 - **Brewfile** - Homebrew でインストールするパッケージの管理
+- **Hammerspoon** - Ctrl ダブルタップで WezTerm の表示/非表示を切り替え
 
 ## セットアップ
 
