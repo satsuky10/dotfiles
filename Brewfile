@@ -1,0 +1,7 @@
+tap "homebrew/services"
+brew "awscli"
+brew "gh"
+brew "lazygit"
+brew "starship"
+cask "hammerspoon"
+cask "wezterm@nightly"

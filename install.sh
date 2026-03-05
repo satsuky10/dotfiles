@@ -39,3 +39,26 @@ setup_wezterm() {
 }
 
 setup_wezterm
+
+# --- Brewfile ---
+setup_brewfile() {
+  local src="$DOTFILES_DIR/Brewfile"
+  local dest="$HOME/.Brewfile"
+  echo "Setting up Brewfile..."
+  if [ -L "$dest" ]; then
+    local current_target
+    current_target="$(readlink "$dest")"
+    if [ "$current_target" = "$src" ]; then
+      echo "  .Brewfile: already linked, skipping"
+      return
+    fi
+    echo "  .Brewfile: removing old symlink -> $current_target"
+    rm "$dest"
+  elif [ -e "$dest" ]; then
+    echo "  .Brewfile: backing up to Brewfile.bak"
+    mv "$dest" "${dest}.bak"
+  fi
+  ln -s "$src" "$dest"
+  echo "  .Brewfile: linked"
+}
+setup_brewfile
